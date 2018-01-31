@@ -1,0 +1,24 @@
+<div class="modal show" tabindex="-1" role="dialog" #modal>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" #modalContent>
+        <div class="modal-title">{{title}}</div>
+        <button class="close"
+                (click)="btnClick($event, 'close')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p *ngFor="let paragraph of body">{{paragraph}}</p>
+      </div>
+      <div class="modal-footer">
+        <button *ngFor="let button of buttons"
+                class="btn"
+                [ngClass]="button.cssClasses"
+                (click)="btnClick($event, button.action)">
+          {{button.text}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

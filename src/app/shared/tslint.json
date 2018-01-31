@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "ngrc",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ngrc",
+      "kebab-case"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  padding-top: 15px;
+}
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  height: 100vh;
+  background: #ababab;
+  border-right: 1px solid #a0a0a0;
+  transform: translate3d(-100%, 0 ,0);
+  transition: .5s;
+  &.visible {
+    transform: translate3d(0, 0 ,0);
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    a {
+      display: block;
+      padding: 5px 15px;
+      cursor: pointer;
+      transition: .15s;
+      opacity: 0.75;
+      user-select: none;
+
+      &.active,
+      &:hover {
+        background: #ffffff;
+        opacity: 1;
+      }
+    }
+  }
+}
+.btnLine {
+  content: " ";
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+}
+.nav-btn {
+  height: 22px;
+  width: 28px;
+  opacity: .5;
+  transition: .2s;
+  background: unset;
+  border: unset;
+  outline: none;
+  padding: 0;
+  &:hover {
+    opacity: 1;
+  }
+  span {
+    @extend .btnLine;
+    display: block;
+    position: relative;
+    &::before,
+    &::after {
+      @extend .btnLine;
+      left: 0;
+      position: absolute;
+    }
+    &::before {
+      top: 7px;
+    }
+    &::after {
+      bottom: 7px;
+    }
+  }
+}

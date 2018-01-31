@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <nav role="navigation" [class.visible]="navIsOpen" #nav>
+        <ul>
+          <li *ngFor="let link of headerLinks">
+            <a (click)="onLinkClick($event, link.path)"
+               [class.active]="link.path === path.value">{{link.title}}</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="nav-btn" #navButton>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</div>
